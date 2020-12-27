@@ -1,0 +1,14 @@
+name: Example GitHub Actions
+on: [push]
+jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecure: 'x64'
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
